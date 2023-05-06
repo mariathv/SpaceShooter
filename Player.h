@@ -67,11 +67,16 @@ public:
 	{
 		//cout<<"move"<<endl;
 		for (int i = 0; i < size; i++) {
+			
 			bullet[i].delta_y = -1;
 			bullet[i].delta_y *= bulletspeed;
 			bullet[i].t_x = t_x;
-			bullet[i].t_y += bullet[i].delta_x;
+			bullet[i].t_y += bullet[i].delta_y;
+			//cout << bullet[0].t_y << endl;
 			bullet[i].sprite.move(0, bullet[i].delta_y);
+			if (bullet[i].t_y > 0) {
+				bullet[i].work = false;
+			}
 		}
 	}
 

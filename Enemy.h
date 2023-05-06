@@ -8,13 +8,9 @@ class Enemy
 {
 	
 	public:
-	//Texture tex;
-	//Sprite sprite;
-	//float speed=0.3;
-	//int x=340, y=700;
-	//float t_x=0, t_y=0;
 
-	virtual void fire(int size)=0;
+
+	virtual void fire(float timer)=0;
 	
 	virtual void move(int y, int i)=0;
 
@@ -28,6 +24,19 @@ class Enemy
 
 	virtual void setX(int x) = 0;
 
-	virtual void dropBomb() = 0;
+	virtual bool getMaxY() = 0;
 
+	virtual bool getenmDisp() = 0;
+
+	virtual void displayBomb(RenderWindow& r) = 0;
+
+	virtual bool IsBomb() = 0;
+
+	virtual void resetBomb() = 0;
+
+	virtual void setBombDisp(bool flag) = 0;
+
+	virtual float getTimer() = 0;
+
+	virtual void setTimer(float time) = 0;
 };

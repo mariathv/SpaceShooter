@@ -54,6 +54,9 @@ void start_game()
 
     bool enm_disp = false, enm_allot = false, p_disp = true;
     int enm_dist = 0;
+    int* seq = new int[7];
+    seq[0] = 1, seq[1] = 3, seq[2] = 5, seq[3] = 0, seq[4] = 2, seq[5] = 4, seq[6] = 6;//bombing sequence
+    int seqindx = 0;
 
     AlphaInvader *A= new AlphaInvader[7];
     for (int i = 0; i < 7; i++) {
@@ -66,101 +69,101 @@ void start_game()
     while (window.isOpen())
     {
 
-        if(!pause){
-            if(pauseMenu.exit){
+        if (!pause) {
+            if (pauseMenu.exit) {
                 music.stop(); window.close();
             }
-            if (pauseMenu.optionMenu.musicFlag==false){
-            music.stop();
-                musicpause=true;
+            if (pauseMenu.optionMenu.musicFlag == false) {
+                music.stop();
+                musicpause = true;
             }
-            if (pauseMenu.optionMenu.musicFlag==true){
-                    if(musicpause){
-                        music.play();
-                        musicpause=false;
-                    }
+            if (pauseMenu.optionMenu.musicFlag == true) {
+                if (musicpause) {
+                    music.play();
+                    musicpause = false;
                 }
-            float time = clock.getElapsedTime().asSeconds(); 
+            }
+            float time = clock.getElapsedTime().asSeconds();
             clock.restart();
-            timer += time;   
+            timer += time;
             Event e;
             while (window.pollEvent(e))
-            {  
+            {
                 if (e.type == Event::Closed) {// If cross/close is clicked/pressed
                     music.stop();
                     window.close(); //close the game  
-                }                      	    
+                }
             }
-                    
+
             if (Keyboard::isKeyPressed(Keyboard::Left)) //If left key is pressed
-                    p->move("l");    // Player will move to left
+                p->move("l");    // Player will move to left
             if (Keyboard::isKeyPressed(Keyboard::Right)) // If right key is pressed
-                    p->move("r");  //player will move to right
-            if (Keyboard::isKeyPressed(Keyboard::Up)){ //If up key is pressed
-                    p->move("u");    //playet will move upwards
-                    if (Keyboard::isKeyPressed(Keyboard::Left))
+                p->move("r");  //player will move to right
+            if (Keyboard::isKeyPressed(Keyboard::Up)) { //If up key is pressed
+                p->move("u");    //playet will move upwards
+                if (Keyboard::isKeyPressed(Keyboard::Left))
                     p->move("dl");
-                    if (Keyboard::isKeyPressed(Keyboard::Right))
+                if (Keyboard::isKeyPressed(Keyboard::Right))
                     p->move("dr");
             }
             if (Keyboard::isKeyPressed(Keyboard::Down)) // If down key is pressed
-                    p->move("d");  //player will move downwards
+                p->move("d");  //player will move downwards
 
             ////////////////////////////////////////////////
             /////  Call your functions here            ////
             //////////////////////////////////////////////
 
             //ENEMIES
-            
-            if(timer>=5){
-                enm_disp=true;
-        
-                if (wave==1){
-                    
-                if(!enm_allot){
-                    
-                    for (int i = 0; i < 7; i++)
-                        enm[i] = &A[i];
 
-                    
-                    enm_allot=true;
-                }
-                for (int i = 0; i < 7; i++) {
-                    enm[i]->move(wave, i); // been called evertime
-                }
-                if (!p->DESTROY)
-                for (int i = 0; i < 7; i++)
-                    if (p->getY() <= enm[i]->getY() && (p->getX() > enm[i]->getX() && p->getX() < enm[i]->getX() + 110)) {
-                        p->DESTROY = true;
-                        cout << "checked" << endl;
-                        p->Destroy();
-                        p->lives--;
-                        TOGGLE = true;
-                        temptimer = timer;
-                        //p->DestroySound.play();
-                        break;
+            if (timer >= 5) {
+                enm_disp = true;
+                if (wave == 1) {
+                    if (!enm_allot) {
+                        for (int i = 0; i < 7; i++)
+                            enm[i] = &A[i];
+                        enm_allot = true;
                     }
-                    
+                    for (int i = 0; i < 7; i++) {
+                        enm[i]->move(wave, i); // been called evertime
+                    }
+                    if (!p->DESTROY)
+                        for (int i = 0; i < 7; i++)
+                            if (p->getY() <= enm[i]->getY() && (p->getX() > enm[i]->getX() && p->getX() < enm[i]->getX() + 110)) {
+                                p->DESTROY = true;
+                                p->Destroy();
+                                p->lives--;
+                                TOGGLE = true;
+                                temptimer = timer;
+                                break;
+                            }
                 }
             }
-
+            //ENEMY BOMBING
             if (enm_disp) {
-                enm[1]->dropBomb();
+                if (enm[seq[seqindx]]->getMaxY()) {
+
+                    enm[seq[seqindx]]->fire(timer);
+                }
             }
-            
             if (p->DESTROY) {
                 p_disp = false;
                 window.draw(p->Dest);
-         
+
             }
 
-            
+
             //FIRING BULLETS
             if (p_disp)
-            p->fire(bullet_size); //fires bullets depending upon the size
-            
+                p->fire(bullet_size); //fires bullets depending upon the size
 
-            //cout<<p->t_x<<" "<<p->t_y<<endl;
+            if (enm_disp)
+                for (int i = 0; i < 7; i++)
+                    for (int j = 0; j < bullet_size; j++)
+                        if (p->bullet[j].getY() <= enm[i]->getY() && (p->bullet[j].getX()+340 > enm[i]->getX() && p->bullet[j].getX()+340 < enm[i]->getX() + 110)){
+                            cout << "destroy enemy" << i << endl;
+        }
+           
+
 
             if (Keyboard::isKeyPressed(Keyboard::P)){  //pause game
             pause=true;
@@ -169,21 +172,37 @@ void start_game()
             pause=false;
             music.play();
             }
-
-            //window.draw(p->bullet->sprite);
-
             window.clear(Color::Black); //clears the screen
             window.draw(background);  // setting background
 
            if (timer>=firetimer){
                 firing=true;
-                firetimer=timer+0.3;
+                firetimer=timer+0.25;
            }
 
-               if (enm_disp) {
-                   for (int i = 0; i < 7; i++)
-                       enm[i]->draw(window);
-               }
+           if (enm_disp) {
+               for (int i = 0; i < 7; i++)
+                   enm[i]->draw(window);
+
+                    
+                   if (enm[seq[seqindx]]->IsBomb()) {
+                       
+                       enm[seq[seqindx]]->displayBomb(window);
+                       if (timer >= enm[seq[seqindx]]->getTimer() + 2) {
+                           enm[seq[seqindx]]->resetBomb();
+                           seqindx++;
+                           if (seqindx == 7) {
+                               seqindx = 0;
+                               for (int i = 0; i < 7; i++)
+                                   enm[i]->setBombDisp(false);
+                           }
+                            
+                           cout << seqindx << endl;
+                       }
+                       
+                   }
+              
+           }
                if (p_disp) {
 
                    window.draw(p->sprite);   // setting player on screen

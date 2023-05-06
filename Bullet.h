@@ -14,6 +14,7 @@ class Bullet
     float t_x, t_y;
     float speed=0.5;
     float delta_x, delta_y;
+    bool work;
     Bullet()
     {
         texture.loadFromFile("img/PNG/Lasers/laserBlue01.png");
@@ -24,6 +25,7 @@ class Bullet
         t_y = 0;
         delta_x=0;
         delta_y=0;
+        work = false;
 
         
         //Laser1.play();
@@ -44,6 +46,7 @@ class Bullet
 
     void setPos(float x, float y){
         sprite.setPosition(x,y);
+        t_y = y;
         
     }
 

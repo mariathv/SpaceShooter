@@ -47,6 +47,9 @@
     <ClInclude Include="Instructions.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Bomb.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Image Include="img\background.jpg">

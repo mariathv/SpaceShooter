@@ -1,0 +1,271 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>16.0</VCProjectVersion>
+    <Keyword>Win32Proj</Keyword>
+    <ProjectGuid>{23673c08-f8a4-4208-9332-83029560c176}</ProjectGuid>
+    <RootNamespace>Project</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>C:\Program Files\SFML\SFML-2.5.1\include</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>C:\Program Files\SFML\SFML-2.5.1\lib</AdditionalLibraryDirectories>
+      <AdditionalDependencies>sfml-audio-d.lib;opengl32.lib;sfml-system-d.lib;sfml-window-d.lib;sfml-graphics-d.lib;sfml-main-d.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Bullet.h" />
+    <ClInclude Include="Enemy.h" />
+    <ClInclude Include="game.h" />
+    <ClInclude Include="Instructions.h" />
+    <ClInclude Include="Invaders.h" />
+    <ClInclude Include="menu.h" />
+    <ClInclude Include="option_menu.h" />
+    <ClInclude Include="pause_menu.h" />
+    <ClInclude Include="Player.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="img\background.jpg" />
+    <Image Include="img\background.png" />
+    <Image Include="img\background1.jpg" />
+    <Image Include="img\background2.jpg" />
+    <Image Include="img\background_1 .jpg" />
+    <Image Include="img\background_1.png" />
+    <Image Include="img\dragon.png" />
+    <Image Include="img\dragon1.png" />
+    <Image Include="img\dragon2.png" />
+    <Image Include="img\enemy_1.png" />
+    <Image Include="img\enemy_2.png" />
+    <Image Include="img\enemy_3.png" />
+    <Image Include="img\enemy_laser.png" />
+    <Image Include="img\explosion.png" />
+    <Image Include="img\menu.jpg" />
+    <Image Include="img\menu_bg.jpg" />
+    <Image Include="img\monster.png" />
+    <Image Include="img\monster1.png" />
+    <Image Include="img\options.jpg" />
+    <Image Include="img\pause_menu.jpg" />
+    <Image Include="img\player_ship.png" />
+    <Image Include="img\player_ship_diagonal_left.png" />
+    <Image Include="img\player_ship_diagonal_right.png" />
+    <Image Include="img\PNG\Effects\fire00.png" />
+    <Image Include="img\PNG\Effects\fire01.png" />
+    <Image Include="img\PNG\Effects\fire02.png" />
+    <Image Include="img\PNG\Effects\fire03.png" />
+    <Image Include="img\PNG\Effects\fire04.png" />
+    <Image Include="img\PNG\Effects\fire05.png" />
+    <Image Include="img\PNG\Effects\fire06.png" />
+    <Image Include="img\PNG\Effects\fire07.png" />
+    <Image Include="img\PNG\Effects\fire08.png" />
+    <Image Include="img\PNG\Effects\fire09.png" />
+    <Image Include="img\PNG\Effects\fire10.png" />
+    <Image Include="img\PNG\Effects\fire11.png" />
+    <Image Include="img\PNG\Effects\fire12.png" />
+    <Image Include="img\PNG\Effects\fire13.png" />
+    <Image Include="img\PNG\Effects\fire14.png" />
+    <Image Include="img\PNG\Effects\fire15.png" />
+    <Image Include="img\PNG\Effects\fire16.png" />
+    <Image Include="img\PNG\Effects\fire17.png" />
+    <Image Include="img\PNG\Effects\fire18.png" />
+    <Image Include="img\PNG\Effects\fire19.png" />
+    <Image Include="img\PNG\Effects\shield1.png" />
+    <Image Include="img\PNG\Effects\shield2.png" />
+    <Image Include="img\PNG\Effects\shield3.png" />
+    <Image Include="img\PNG\Effects\speed.png" />
+    <Image Include="img\PNG\Effects\star1.png" />
+    <Image Include="img\PNG\Effects\star2.png" />
+    <Image Include="img\PNG\Effects\star3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Project_Evaluation_Form - Sheet.pdf" />
+    <None Include="sounds\Battle_in_the_Stars.ogg" />
+    <None Include="sounds\DeathMatch (Boss Theme).ogg" />
+    <None Include="sounds\Menu_Theme.ogg" />
+    <None Include="sounds\pipe.ogg" />
+    <None Include="sounds\Space Heroes.ogg" />
+    <None Include="sounds\Title_Screen.ogg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Media Include="sounds\highDown.mp3" />
+    <Media Include="sounds\highUp.mp3" />
+    <Media Include="sounds\laser7.mp3" />
+    <Media Include="sounds\laser8.mp3" />
+    <Media Include="sounds\laser9.mp3" />
+    <Media Include="sounds\lowDown.mp3" />
+    <Media Include="sounds\lowRandom.mp3" />
+    <Media Include="sounds\lowThreeTone.mp3" />
+    <Media Include="sounds\pepSound1.mp3" />
+    <Media Include="sounds\pepSound2.mp3" />
+    <Media Include="sounds\pepSound3.mp3" />
+    <Media Include="sounds\pepSound4.mp3" />
+    <Media Include="sounds\pepSound5.mp3" />
+    <Media Include="sounds\phaseJump1.mp3" />
+    <Media Include="sounds\phaseJump2.mp3" />
+    <Media Include="sounds\phaseJump3.mp3" />
+    <Media Include="sounds\phaseJump4.mp3" />
+    <Media Include="sounds\phaseJump5.mp3" />
+    <Media Include="sounds\phaserDown1.mp3" />
+    <Media Include="sounds\phaserDown2.mp3" />
+    <Media Include="sounds\phaserDown3.mp3" />
+    <Media Include="sounds\phaserUp1.mp3" />
+    <Media Include="sounds\phaserUp2.mp3" />
+    <Media Include="sounds\phaserUp3.mp3" />
+    <Media Include="sounds\phaserUp4.mp3" />
+    <Media Include="sounds\phaserUp5.mp3" />
+    <Media Include="sounds\phaserUp6.mp3" />
+    <Media Include="sounds\phaserUp7.mp3" />
+    <Media Include="sounds\powerUp1.mp3" />
+    <Media Include="sounds\powerUp10.mp3" />
+    <Media Include="sounds\powerUp11.mp3" />
+    <Media Include="sounds\powerUp12.mp3" />
+    <Media Include="sounds\powerUp2.mp3" />
+    <Media Include="sounds\powerUp3.mp3" />
+    <Media Include="sounds\powerUp4.mp3" />
+    <Media Include="sounds\powerUp5.mp3" />
+    <Media Include="sounds\powerUp6.mp3" />
+    <Media Include="sounds\powerUp7.mp3" />
+    <Media Include="sounds\powerUp8.mp3" />
+    <Media Include="sounds\powerUp9.mp3" />
+    <Media Include="sounds\spaceTrash1.mp3" />
+    <Media Include="sounds\spaceTrash2.mp3" />
+    <Media Include="sounds\spaceTrash3.mp3" />
+    <Media Include="sounds\spaceTrash4.mp3" />
+    <Media Include="sounds\spaceTrash5.mp3" />
+    <Media Include="sounds\threeTone1.mp3" />
+    <Media Include="sounds\threeTone2.mp3" />
+    <Media Include="sounds\tone1.mp3" />
+    <Media Include="sounds\twoTone1.mp3" />
+    <Media Include="sounds\twoTone2.mp3" />
+    <Media Include="sounds\zap1.mp3" />
+    <Media Include="sounds\zap2.mp3" />
+    <Media Include="sounds\zapThreeToneDown.mp3" />
+    <Media Include="sounds\zapThreeToneUp.mp3" />
+    <Media Include="sounds\zapTwoTone.mp3" />
+    <Media Include="sounds\zapTwoTone2.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="sounds\readme.txt" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

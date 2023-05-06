@@ -1,0 +1,273 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Player.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Bullet.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Enemy.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="game.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Invaders.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="menu.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="option_menu.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="pause_menu.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Instructions.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="img\background.jpg">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="img\background.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="img\background_1 .jpg">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="img\background_1.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="img\background1.jpg">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="img\background2.jpg">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="img\dragon.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="img\dragon1.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="img\dragon2.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="img\enemy_1.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="img\enemy_2.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="img\enemy_3.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="img\enemy_laser.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="img\explosion.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="img\menu.jpg">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="img\menu_bg.jpg">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="img\monster.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="img\monster1.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="img\options.jpg">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="img\pause_menu.jpg">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="img\player_ship.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="img\player_ship_diagonal_left.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="img\player_ship_diagonal_right.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="img\PNG\Effects\fire00.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="img\PNG\Effects\fire01.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="img\PNG\Effects\fire02.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="img\PNG\Effects\fire03.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="img\PNG\Effects\fire04.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="img\PNG\Effects\fire05.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="img\PNG\Effects\fire06.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="img\PNG\Effects\fire07.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="img\PNG\Effects\fire08.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="img\PNG\Effects\fire09.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="img\PNG\Effects\fire10.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="img\PNG\Effects\fire11.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="img\PNG\Effects\fire12.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="img\PNG\Effects\fire13.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="img\PNG\Effects\fire14.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="img\PNG\Effects\fire15.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="img\PNG\Effects\fire16.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="img\PNG\Effects\fire17.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="img\PNG\Effects\fire18.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="img\PNG\Effects\fire19.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="img\PNG\Effects\shield1.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="img\PNG\Effects\shield2.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="img\PNG\Effects\shield3.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="img\PNG\Effects\speed.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="img\PNG\Effects\star1.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="img\PNG\Effects\star2.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="img\PNG\Effects\star3.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Project_Evaluation_Form - Sheet.pdf" />
+    <None Include="sounds\Battle_in_the_Stars.ogg" />
+    <None Include="sounds\DeathMatch (Boss Theme).ogg" />
+    <None Include="sounds\Menu_Theme.ogg" />
+    <None Include="sounds\pipe.ogg" />
+    <None Include="sounds\Space Heroes.ogg" />
+    <None Include="sounds\Title_Screen.ogg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Media Include="sounds\highDown.mp3" />
+    <Media Include="sounds\highUp.mp3" />
+    <Media Include="sounds\laser7.mp3" />
+    <Media Include="sounds\laser8.mp3" />
+    <Media Include="sounds\laser9.mp3" />
+    <Media Include="sounds\lowDown.mp3" />
+    <Media Include="sounds\lowRandom.mp3" />
+    <Media Include="sounds\lowThreeTone.mp3" />
+    <Media Include="sounds\pepSound1.mp3" />
+    <Media Include="sounds\pepSound2.mp3" />
+    <Media Include="sounds\pepSound3.mp3" />
+    <Media Include="sounds\pepSound4.mp3" />
+    <Media Include="sounds\pepSound5.mp3" />
+    <Media Include="sounds\phaseJump1.mp3" />
+    <Media Include="sounds\phaseJump2.mp3" />
+    <Media Include="sounds\phaseJump3.mp3" />
+    <Media Include="sounds\phaseJump4.mp3" />
+    <Media Include="sounds\phaseJump5.mp3" />
+    <Media Include="sounds\phaserDown1.mp3" />
+    <Media Include="sounds\phaserDown2.mp3" />
+    <Media Include="sounds\phaserDown3.mp3" />
+    <Media Include="sounds\phaserUp1.mp3" />
+    <Media Include="sounds\phaserUp2.mp3" />
+    <Media Include="sounds\phaserUp3.mp3" />
+    <Media Include="sounds\phaserUp4.mp3" />
+    <Media Include="sounds\phaserUp5.mp3" />
+    <Media Include="sounds\phaserUp6.mp3" />
+    <Media Include="sounds\phaserUp7.mp3" />
+    <Media Include="sounds\powerUp1.mp3" />
+    <Media Include="sounds\powerUp2.mp3" />
+    <Media Include="sounds\powerUp3.mp3" />
+    <Media Include="sounds\powerUp4.mp3" />
+    <Media Include="sounds\powerUp5.mp3" />
+    <Media Include="sounds\powerUp6.mp3" />
+    <Media Include="sounds\powerUp7.mp3" />
+    <Media Include="sounds\powerUp8.mp3" />
+    <Media Include="sounds\powerUp9.mp3" />
+    <Media Include="sounds\powerUp10.mp3" />
+    <Media Include="sounds\powerUp11.mp3" />
+    <Media Include="sounds\powerUp12.mp3" />
+    <Media Include="sounds\spaceTrash1.mp3" />
+    <Media Include="sounds\spaceTrash2.mp3" />
+    <Media Include="sounds\spaceTrash3.mp3" />
+    <Media Include="sounds\spaceTrash4.mp3" />
+    <Media Include="sounds\spaceTrash5.mp3" />
+    <Media Include="sounds\threeTone1.mp3" />
+    <Media Include="sounds\threeTone2.mp3" />
+    <Media Include="sounds\tone1.mp3" />
+    <Media Include="sounds\twoTone1.mp3" />
+    <Media Include="sounds\twoTone2.mp3" />
+    <Media Include="sounds\zap1.mp3" />
+    <Media Include="sounds\zap2.mp3" />
+    <Media Include="sounds\zapThreeToneDown.mp3" />
+    <Media Include="sounds\zapThreeToneUp.mp3" />
+    <Media Include="sounds\zapTwoTone.mp3" />
+    <Media Include="sounds\zapTwoTone2.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="sounds\readme.txt" />
+  </ItemGroup>
+</Project>

@@ -51,12 +51,17 @@ void start_game()
     bool maxbul=false; // limits the bullet array
     bool firing = false;
     bool TOGGLE = false;
+    bool fcontinue = false;
 
-    bool enm_disp = false, enm_allot = false, p_disp = true;
+    bool enm_disp = false, enm_allot = false, p_disp = true, enmdes = false;;
     int enm_dist = 0;
     int* seq = new int[7];
     seq[0] = 1, seq[1] = 3, seq[2] = 5, seq[3] = 0, seq[4] = 2, seq[5] = 4, seq[6] = 6;//bombing sequence
-    int seqindx = 0;
+    int* desseq = new int[7];
+    for (int i = 0; i < 7; i++) desseq[i] = -1;
+    int seqindx = 0, desindex = 0;
+
+    bool alldestroyed = false;
 
     AlphaInvader *A= new AlphaInvader[7];
     for (int i = 0; i < 7; i++) {
@@ -157,14 +162,31 @@ void start_game()
                 p->fire(bullet_size); //fires bullets depending upon the size
 
             if (enm_disp)
-                for (int i = 0; i < 7; i++)
-                    for (int j = 0; j < bullet_size; j++)
-                        if (p->bullet[j].getY() <= enm[i]->getY() && (p->bullet[j].getX()+340 > enm[i]->getX() && p->bullet[j].getX()+340 < enm[i]->getX() + 110)){
-                            cout << "destroy enemy" << i << endl;
-        }
+                if(!alldestroyed)
+                    for (int i = 0; i < 7; i++) {
+                        for (int j = 0; j < bullet_size; j++)
+                            if (p->bullet[j].getY() <= enm[i]->getY()+50 && (p->bullet[j].getX() + 340 > enm[i]->getX() && p->bullet[j].getX() + 340 < enm[i]->getX() + 110)) {
+                                for (int k = 0; k < 7; k++)
+                                    if (i == desseq[k]) {
+                                        fcontinue = true;
+                                        break;
+                                    }
+                                        if (!fcontinue) {
+                                            enm[i]->setDestroyed(true);
+                                            desseq[desindex] = i;
+                                            cout << desindex << endl;
+                                            desindex++;
+                                            break;
+                                        }
+                            }
+                        if (desindex == 7)
+                            alldestroyed = true;
+                        fcontinue = false;
+                    }
+
+
            
-
-
+          
             if (Keyboard::isKeyPressed(Keyboard::P)){  //pause game
             pause=true;
             music.pause();
@@ -180,13 +202,36 @@ void start_game()
                 firetimer=timer+0.25;
            }
 
+           /*if (enm_disp) {
+               for (int i = 0; i < 7; i++) {
+                   for (int j = 0; j < 7; j++) {
+                       if (i == desseq[j]) {
+                           enmdes = true;
+
+                       }
+                   }
+                   if(!enmdes)
+                        enm[i]->draw(window);
+                   enmdes = false;
+               }*/
+
            if (enm_disp) {
-               for (int i = 0; i < 7; i++)
-                   enm[i]->draw(window);
+               for (int i = 0; i < 7; i++) {
+                   for (int j = 0; j < 7; j++) {
+                       if (i == desseq[j]) {
+                           enmdes = true;
+
+                       }
+                   }
+                   if (!enmdes)
+                       enm[i]->draw(window);
+                   else
+                   enmdes = false;
+               }
 
                     
                    if (enm[seq[seqindx]]->IsBomb()) {
-                       
+                       if(!enm[seq[seqindx]]->isDestroyed())
                        enm[seq[seqindx]]->displayBomb(window);
                        if (timer >= enm[seq[seqindx]]->getTimer() + 2) {
                            enm[seq[seqindx]]->resetBomb();
@@ -196,8 +241,6 @@ void start_game()
                                for (int i = 0; i < 7; i++)
                                    enm[i]->setBombDisp(false);
                            }
-                            
-                           cout << seqindx << endl;
                        }
                        
                    }

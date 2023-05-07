@@ -26,6 +26,10 @@ class AlphaInvader : public Invader
     bool max_y, enm_disp;
     int lane_y;
 
+    float top, bottom, right, left;
+
+    bool Destroyed;
+
     AlphaInvader()
     {
         bomb = new Bomb;
@@ -37,7 +41,10 @@ class AlphaInvader : public Invader
         x = 340; y = 700;
         max_y = false, enm_disp = false;
         bomb_timer = 0; //after 5 seconds, bomb will drop
-        
+        Destroyed = false; //firing and displaying based on isDestroyed
+        top = bottom = right = left = false;
+
+        getBounds();
     }
 
 	void fire(float timer)
@@ -83,8 +90,26 @@ class AlphaInvader : public Invader
     {
         return t_y;
     }
+
+    void getBounds()
+    {
+        FloatRect f = sprite.getLocalBounds();
+        top = f.top;
+        bottom = f.top-f.height;
+        left = f.left;
+        right = f.left + f.width;
+
+    }
     void setX(int x) {
         t_x = x;
+    }
+
+    bool isDestroyed() {
+        return Destroyed;
+    }
+
+    void setDestroyed(bool flag) {
+        Destroyed = flag;
     }
     bool getMaxY() {
         return max_y;

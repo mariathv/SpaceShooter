@@ -28,6 +28,10 @@ class Enemy
 
 	virtual bool getenmDisp() = 0;
 
+	virtual bool isDestroyed() = 0;
+
+	virtual void setDestroyed(bool flag) = 0;
+
 	virtual void displayBomb(RenderWindow& r) = 0;
 
 	virtual bool IsBomb() = 0;
